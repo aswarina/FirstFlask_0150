@@ -2,24 +2,39 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Input Nama</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
-    <h1>Form Input Nama</h1>
+    <div class="container">
+      <h1>Form Input Nama</h1>
 
-    <p>Silakan masukkan nama kamu.</p>
+      <p>Silakan masukkan nama kamu.</p>
 
-    <form method="POST" action="/">
-      <label for="nama">Nama Lengkap:</label>
+      <form method="POST" action="/">
+        <label for="nama">Nama Lengkap:</label>
 
-      <input
-        type="text"
-        id="nama"
-        name="nama"
-        placeholder="Masukkan nama kamu"
-      />
+        <input
+          type="text"
+          id="nama"
+          name="nama"
+          placeholder="Masukkan nama kamu"
+        />
 
-      <button type="submit">Kirim</button>
-    </form>
+        <button type="submit">Kirim</button>
+      </form>
+
+      {% if hasil %}
+      <div class="hasil">
+        <label>Hasil:</label>
+        <p>{{ hasil }}</p>
+      </div>
+      {% endif %}
+    </div>
   </body>
 </html>
